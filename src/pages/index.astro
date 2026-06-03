@@ -5,11 +5,66 @@ const pageTitle = "Miller Emion - Junior Software Engineer";
 const description =
   "Miller Emion is a junior software engineer building practical software, AI tools, developer systems, and open-source projects.";
 
-const links = [
-  { label: "GitHub", href: "https://github.com/XtraSaltyDev", value: "XtraSaltyDev", placeholder: false },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/your-linkedin/", value: "Placeholder", placeholder: true },
-  { label: "Resume", href: "/resume.pdf", value: "Placeholder", placeholder: true },
-  { label: "Email", href: "mailto:hello@memion.io", value: "hello@memion.io", placeholder: true }
+const socialLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com/XtraSaltyDev",
+    value: "XtraSaltyDev",
+    placeholder: false,
+    viewBox: "0 0 24 24",
+    path:
+      "M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.47c1.02 0 2.05.14 3.01.4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5Z"
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/your-linkedin/",
+    value: "Placeholder",
+    placeholder: true,
+    viewBox: "0 0 24 24",
+    path:
+      "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.23 0H1.76C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.76 24h20.47c.97 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0Z"
+  },
+  {
+    label: "Resume",
+    href: "/resume.pdf",
+    value: "Placeholder",
+    placeholder: true,
+    viewBox: "0 0 24 24",
+    path:
+      "M6 2.75A2.75 2.75 0 0 1 8.75 0h5.84c.73 0 1.43.29 1.94.8l3.67 3.67c.51.51.8 1.21.8 1.94v14.84A2.75 2.75 0 0 1 18.25 24h-9.5A2.75 2.75 0 0 1 6 21.25V2.75Zm8 1V7h3.25L14 3.75ZM9 11.25c0-.41.34-.75.75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1-.75-.75Zm0 3.5c0-.41.34-.75.75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1-.75-.75Zm0 3.5c0-.41.34-.75.75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Z"
+  },
+  {
+    label: "Email",
+    href: "mailto:hello@memion.io",
+    value: "hello@memion.io",
+    placeholder: true,
+    viewBox: "0 0 24 24",
+    path:
+      "M2.75 4h18.5A2.75 2.75 0 0 1 24 6.75v10.5A2.75 2.75 0 0 1 21.25 20H2.75A2.75 2.75 0 0 1 0 17.25V6.75A2.75 2.75 0 0 1 2.75 4Zm.35 2 8.18 6.2c.43.32 1.01.32 1.44 0L20.9 6H3.1Zm18.9 1.6-8.07 6.12a3.2 3.2 0 0 1-3.86 0L2 7.6v9.65c0 .41.34.75.75.75h18.5c.41 0 .75-.34.75-.75V7.6Z"
+  }
+];
+
+const resourceLinks = [
+  {
+    label: "About",
+    href: "#about",
+    body: "Background, current direction, and how I think about building."
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+    body: "Active project areas and links out to public work."
+  },
+  {
+    label: "Now",
+    href: "#now",
+    body: "What I am learning and shipping in the current season."
+  },
+  {
+    label: "Contact",
+    href: "#resources",
+    body: "GitHub, LinkedIn, resume, and email endpoints."
+  }
 ];
 
 const projects = [
@@ -84,36 +139,31 @@ const codeLines = [
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-shell site-header" aria-label="Site header">
-      <a class="brand" href="/" aria-label="memion.io home">
-        <span class="brand-mark" aria-hidden="true">ME</span>
-        <span>memion.io</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#now">Now</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
     <main id="main">
       <section class="site-shell hero" aria-labelledby="hero-title">
         <div class="hero-copy">
+          <a class="brand-lockup" href="/" aria-label="memion.io home">
+            <span class="brand-mark" aria-hidden="true">ME</span>
+            <span>memion.io</span>
+          </a>
           <h1 id="hero-title">Miller Emion</h1>
           <p class="role">Junior Software Engineer</p>
           <p class="statement">
             Building practical software, AI tools, and developer systems.
           </p>
-          <div class="link-row" aria-label="Primary links">
+          <div class="icon-link-row" aria-label="Social and contact links">
             {
-              links.map((link) => (
+              socialLinks.map((link) => (
                 <a
-                  class:list={["text-link", { placeholder: link.placeholder }]}
+                  class:list={["icon-link", { placeholder: link.placeholder }]}
                   href={link.href}
                   aria-label={`${link.label}${link.placeholder ? " placeholder" : ""}`}
+                  title={link.label}
                 >
-                  {link.label}
+                  <svg viewBox={link.viewBox} aria-hidden="true" focusable="false">
+                    <path d={link.path}></path>
+                  </svg>
+                  <span class="sr-only">{link.label}</span>
                 </a>
               ))
             }
@@ -201,26 +251,37 @@ const codeLines = [
           </div>
         </section>
 
-        <section id="contact" class="panel-section" aria-labelledby="contact-title">
-          <h2 id="contact-title" class="section-label">Contact</h2>
+        <section id="resources" class="panel-section" aria-labelledby="resources-title">
+          <h2 id="resources-title" class="section-label">Resources</h2>
           <div class="section-content">
             <p>
-              The best public place to follow along right now is GitHub. The
-              remaining links are placeholders for v0.1 and can be swapped in as
-              the site becomes more complete.
+              Start with the page section you need, then jump out to the public
+              endpoints as they come online.
             </p>
-            <ul class="contact-list">
+            <ul class="resource-list">
               {
-                links.map((link) => (
+                resourceLinks.map((resource) => (
                   <li>
-                    <span>{link.label}</span>
-                    <a href={link.href} class:list={{ placeholder: link.placeholder }}>
-                      {link.value}
+                    <a href={resource.href}>
+                      <span>{resource.label}</span>
+                      <small>{resource.body}</small>
                     </a>
                   </li>
                 ))
               }
             </ul>
+            <div class="resource-socials" aria-label="Social and contact endpoints">
+              {
+                socialLinks.map((link) => (
+                  <a href={link.href} class:list={{ placeholder: link.placeholder }}>
+                    <svg viewBox={link.viewBox} aria-hidden="true" focusable="false">
+                      <path d={link.path}></path>
+                    </svg>
+                    <span>{link.label}</span>
+                  </a>
+                ))
+              }
+            </div>
           </div>
         </section>
       </div>
