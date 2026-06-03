@@ -1,0 +1,168 @@
+---
+import "../styles/global.css";
+
+const pageTitle = "Miller Emion — Junior Software Engineer";
+const description =
+  "Miller Emion is a junior software engineer building practical software, AI tools, developer systems, and open-source projects.";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/XtraSaltyDev", placeholder: false },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/your-linkedin/", placeholder: true },
+  { label: "Resume", href: "/resume.pdf", placeholder: true },
+  { label: "Email", href: "mailto:hello@memion.io", placeholder: true }
+];
+
+const projects = [
+  {
+    title: "Agent Notes",
+    body:
+      "An open-source tool idea for local notes and durable context that coding agents can use while helping with real projects."
+  },
+  {
+    title: "Homelab / Infrastructure",
+    body:
+      "Practical infrastructure work around remote access, local services, backups, and the small systems that make a developer setup more reliable."
+  },
+  {
+    title: "AI Tooling Experiments",
+    body:
+      "Local AI workflows, automation experiments, and agent-oriented development patterns explored through hands-on builds."
+  }
+];
+
+const nowItems = [
+  "Growing as a software engineer",
+  "Building open-source developer tools",
+  "Learning better AI-assisted engineering workflows",
+  "Documenting practical lessons while building"
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://memion.io" />
+    <meta property="og:site_name" content="memion.io" />
+    <meta name="theme-color" content="#111315" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-shell site-header" aria-label="Site header">
+      <a class="brand" href="/" aria-label="memion.io home">
+        <span class="brand-mark" aria-hidden="true">ME</span>
+        <span>memion.io</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#now">Now</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main" class="site-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Miller Emion</h1>
+        <div class="hero-summary">
+          <p class="role">Junior Software Engineer</p>
+          <p class="statement">
+            Building practical software, AI tools, and developer systems.
+          </p>
+          <div class="link-row" aria-label="Primary links">
+            {
+              links.map((link) => (
+                <a
+                  class:list={["text-link", { placeholder: link.placeholder }]}
+                  href={link.href}
+                  aria-label={`${link.label}${link.placeholder ? " placeholder" : ""}`}
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-label">About</h2>
+        <div class="section-content">
+          <p>
+            I am an early-career software engineer focused on practical,
+            useful software. I learn fastest by building real things, testing
+            them honestly, and improving the pieces that make everyday
+            development smoother.
+          </p>
+          <p>
+            My current interests sit around developer tools, local-first
+            workflows, infrastructure, and AI-assisted engineering. I am still
+            growing, but I care about writing clear code, shipping small
+            improvements, and understanding the systems I work with.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section-label">Projects</h2>
+        <div class="section-content">
+          <div class="projects-grid">
+            {
+              projects.map((project) => (
+                <article class="project-card">
+                  <h3>{project.title}</h3>
+                  <p>{project.body}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section id="now" class="section" aria-labelledby="now-title">
+        <h2 id="now-title" class="section-label">Now</h2>
+        <div class="section-content">
+          <ul class="now-list">
+            {nowItems.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section-label">Contact</h2>
+        <div class="section-content">
+          <p>
+            The best public place to follow along right now is GitHub. The
+            remaining links are placeholders for v0.1 and can be swapped in as
+            the site becomes more complete.
+          </p>
+          <ul class="contact-list">
+            {
+              links.map((link) => (
+                <li>
+                  <a href={link.href}>
+                    {link.label}
+                    {link.placeholder ? " placeholder" : ""}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-shell site-footer">
+      <p>© {new Date().getFullYear()} Miller Emion</p>
+      <p>Built with Astro. Deployed as a static site.</p>
+    </footer>
+  </body>
+</html>
