@@ -1,40 +1,68 @@
 ---
 import "../styles/global.css";
 
-const pageTitle = "Miller Emion — Junior Software Engineer";
+const pageTitle = "Miller Emion - Junior Software Engineer";
 const description =
   "Miller Emion is a junior software engineer building practical software, AI tools, developer systems, and open-source projects.";
 
 const links = [
-  { label: "GitHub", href: "https://github.com/XtraSaltyDev", placeholder: false },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/your-linkedin/", placeholder: true },
-  { label: "Resume", href: "/resume.pdf", placeholder: true },
-  { label: "Email", href: "mailto:hello@memion.io", placeholder: true }
+  { label: "GitHub", href: "https://github.com/XtraSaltyDev", value: "XtraSaltyDev", placeholder: false },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/your-linkedin/", value: "Placeholder", placeholder: true },
+  { label: "Resume", href: "/resume.pdf", value: "Placeholder", placeholder: true },
+  { label: "Email", href: "mailto:hello@memion.io", value: "hello@memion.io", placeholder: true }
 ];
 
 const projects = [
   {
     title: "Agent Notes",
     body:
-      "An open-source tool idea for local notes and durable context that coding agents can use while helping with real projects."
+      "An open-source tool idea for local notes and durable context that coding agents can use while helping with real projects.",
+    tags: ["Astro", "TypeScript", "Local-first", "Agents"],
+    status: "Exploring"
   },
   {
     title: "Homelab / Infrastructure",
     body:
-      "Practical infrastructure work around remote access, local services, backups, and the small systems that make a developer setup more reliable."
+      "Practical infrastructure work around remote access, local services, backups, and the small systems that make a developer setup more reliable.",
+    tags: ["Linux", "Networking", "Backups", "Remote access"],
+    status: "Learning"
   },
   {
     title: "AI Tooling Experiments",
     body:
-      "Local AI workflows, automation experiments, and agent-oriented development patterns explored through hands-on builds."
+      "Local AI workflows, automation experiments, and agent-oriented development patterns explored through hands-on builds.",
+    tags: ["OpenAI", "Local AI", "Automation", "CLI"],
+    status: "Building"
   }
 ];
 
 const nowItems = [
-  "Growing as a software engineer",
-  "Building open-source developer tools",
-  "Learning better AI-assisted engineering workflows",
-  "Documenting practical lessons while building"
+  {
+    title: "Growing as a software engineer",
+    body: "Practicing fundamentals through real projects, review, and repetition."
+  },
+  {
+    title: "Building open-source developer tools",
+    body: "Starting small, keeping scope honest, and shipping useful pieces."
+  },
+  {
+    title: "Learning AI-assisted engineering workflows",
+    body: "Testing where agents help, where they fail, and how to keep context clear."
+  },
+  {
+    title: "Documenting practical lessons",
+    body: "Turning setup notes and debugging paths into reusable references."
+  }
+];
+
+const codeLines = [
+  "const builder = {",
+  '  focus: ["practical software", "AI tools", "dev systems"],',
+  '  mindset: "ship small, iterate, improve",',
+  '  learning: "in public"',
+  "};",
+  "",
+  "while (learning) { build(); ship(); reflect(); }"
 ];
 ---
 
@@ -49,7 +77,7 @@ const nowItems = [
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://memion.io" />
     <meta property="og:site_name" content="memion.io" />
-    <meta name="theme-color" content="#111315" />
+    <meta name="theme-color" content="#f7f9f7" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>
   </head>
@@ -69,10 +97,10 @@ const nowItems = [
       </nav>
     </header>
 
-    <main id="main" class="site-shell">
-      <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Miller Emion</h1>
-        <div class="hero-summary">
+    <main id="main">
+      <section class="site-shell hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Miller Emion</h1>
           <p class="role">Junior Software Engineer</p>
           <p class="statement">
             Building practical software, AI tools, and developer systems.
@@ -91,78 +119,117 @@ const nowItems = [
             }
           </div>
         </div>
-      </section>
 
-      <section id="about" class="section" aria-labelledby="about-title">
-        <h2 id="about-title" class="section-label">About</h2>
-        <div class="section-content">
-          <p>
-            I am an early-career software engineer focused on practical,
-            useful software. I learn fastest by building real things, testing
-            them honestly, and improving the pieces that make everyday
-            development smoother.
-          </p>
-          <p>
-            My current interests sit around developer tools, local-first
-            workflows, infrastructure, and AI-assisted engineering. I am still
-            growing, but I care about writing clear code, shipping small
-            improvements, and understanding the systems I work with.
-          </p>
-        </div>
-      </section>
-
-      <section id="projects" class="section" aria-labelledby="projects-title">
-        <h2 id="projects-title" class="section-label">Projects</h2>
-        <div class="section-content">
-          <div class="projects-grid">
-            {
-              projects.map((project) => (
-                <article class="project-card">
-                  <h3>{project.title}</h3>
-                  <p>{project.body}</p>
-                </article>
-              ))
-            }
+        <div class="hero-art" aria-label="Builder profile code note">
+          <div class="terminal-card">
+            <div class="terminal-top">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <p>~/memion.io</p>
+            </div>
+            <pre aria-label="Short code-style summary">{codeLines.join("\n")}</pre>
           </div>
         </div>
       </section>
 
-      <section id="now" class="section" aria-labelledby="now-title">
-        <h2 id="now-title" class="section-label">Now</h2>
-        <div class="section-content">
-          <ul class="now-list">
-            {nowItems.map((item) => <li>{item}</li>)}
-          </ul>
+      <section id="projects" class="site-shell section projects-section" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title" class="section-label">Projects</h2>
+          <a class="section-action" href="https://github.com/XtraSaltyDev">View GitHub</a>
+        </div>
+
+        <div class="projects-grid">
+          {
+            projects.map((project) => (
+              <article class="project-card">
+                <div class="project-card-main">
+                  <div class="project-icon" aria-hidden="true">~/</div>
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>{project.body}</p>
+                  </div>
+                </div>
+                <ul class="tag-list" aria-label={`${project.title} focus areas`}>
+                  {project.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+                <div class="project-meta">
+                  <span>Status: {project.status}</span>
+                  <a href="https://github.com/XtraSaltyDev">GitHub</a>
+                </div>
+              </article>
+            ))
+          }
         </div>
       </section>
 
-      <section id="contact" class="section" aria-labelledby="contact-title">
-        <h2 id="contact-title" class="section-label">Contact</h2>
-        <div class="section-content">
-          <p>
-            The best public place to follow along right now is GitHub. The
-            remaining links are placeholders for v0.1 and can be swapped in as
-            the site becomes more complete.
-          </p>
-          <ul class="contact-list">
-            {
-              links.map((link) => (
-                <li>
-                  <a href={link.href}>
-                    {link.label}
-                    {link.placeholder ? " placeholder" : ""}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </section>
+      <div class="site-shell lower-grid">
+        <section id="about" class="panel-section" aria-labelledby="about-title">
+          <h2 id="about-title" class="section-label">About</h2>
+          <div class="section-content">
+            <p>
+              I am an early-career software engineer focused on practical,
+              useful software. I learn fastest by building real things, testing
+              them honestly, and improving the pieces that make everyday
+              development smoother.
+            </p>
+            <p>
+              My current interests sit around developer tools, local-first
+              workflows, infrastructure, and AI-assisted engineering. I am still
+              growing, but I care about writing clear code, shipping small
+              improvements, and understanding the systems I work with.
+            </p>
+          </div>
+        </section>
+
+        <section id="now" class="panel-section" aria-labelledby="now-title">
+          <h2 id="now-title" class="section-label">Now</h2>
+          <div class="section-content">
+            <ul class="now-list">
+              {
+                nowItems.map((item) => (
+                  <li>
+                    <span aria-hidden="true"></span>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <p>{item.body}</p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </section>
+
+        <section id="contact" class="panel-section" aria-labelledby="contact-title">
+          <h2 id="contact-title" class="section-label">Contact</h2>
+          <div class="section-content">
+            <p>
+              The best public place to follow along right now is GitHub. The
+              remaining links are placeholders for v0.1 and can be swapped in as
+              the site becomes more complete.
+            </p>
+            <ul class="contact-list">
+              {
+                links.map((link) => (
+                  <li>
+                    <span>{link.label}</span>
+                    <a href={link.href} class:list={{ placeholder: link.placeholder }}>
+                      {link.value}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="site-shell site-footer">
       <p>© {new Date().getFullYear()} Miller Emion</p>
-      <p>Built with Astro. Deployed as a static site.</p>
+      <p>Built with Astro. Hosted on Vercel.</p>
+      <a href="#main">Back to top</a>
     </footer>
   </body>
 </html>
