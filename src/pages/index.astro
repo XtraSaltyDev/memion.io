@@ -5,119 +5,52 @@ const pageTitle = "Miller Emion - Junior Software Engineer";
 const description =
   "Miller Emion is a junior software engineer building practical software, AI tools, developer systems, and open-source projects.";
 
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/XtraSaltyDev",
-    value: "XtraSaltyDev",
-    placeholder: false,
-    viewBox: "0 0 24 24",
-    path:
-      "M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.83 2.82 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.47c1.02 0 2.05.14 3.01.4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5Z"
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/your-linkedin/",
-    value: "Placeholder",
-    placeholder: true,
-    viewBox: "0 0 24 24",
-    path:
-      "M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.23 0H1.76C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.76 24h20.47c.97 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0Z"
-  },
-  {
-    label: "Resume",
-    href: "/resume.pdf",
-    value: "Placeholder",
-    placeholder: true,
-    viewBox: "0 0 24 24",
-    path:
-      "M6 2.75A2.75 2.75 0 0 1 8.75 0h5.84c.73 0 1.43.29 1.94.8l3.67 3.67c.51.51.8 1.21.8 1.94v14.84A2.75 2.75 0 0 1 18.25 24h-9.5A2.75 2.75 0 0 1 6 21.25V2.75Zm8 1V7h3.25L14 3.75ZM9 11.25c0-.41.34-.75.75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1-.75-.75Zm0 3.5c0-.41.34-.75.75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1-.75-.75Zm0 3.5c0-.41.34-.75.75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Z"
-  },
-  {
-    label: "Email",
-    href: "mailto:hello@memion.io",
-    value: "hello@memion.io",
-    placeholder: true,
-    viewBox: "0 0 24 24",
-    path:
-      "M2.75 4h18.5A2.75 2.75 0 0 1 24 6.75v10.5A2.75 2.75 0 0 1 21.25 20H2.75A2.75 2.75 0 0 1 0 17.25V6.75A2.75 2.75 0 0 1 2.75 4Zm.35 2 8.18 6.2c.43.32 1.01.32 1.44 0L20.9 6H3.1Zm18.9 1.6-8.07 6.12a3.2 3.2 0 0 1-3.86 0L2 7.6v9.65c0 .41.34.75.75.75h18.5c.41 0 .75-.34.75-.75V7.6Z"
-  }
+const navLinks = [
+  { label: "Work", href: "#work" },
+  { label: "Notes", href: "#notes" },
+  { label: "Contact", href: "#contact" }
 ];
 
-const resourceLinks = [
+const workItems = [
   {
-    label: "About",
-    href: "#about",
-    body: "Background, current direction, and how I think about building."
-  },
-  {
-    label: "Projects",
-    href: "#projects",
-    body: "Active project areas and links out to public work."
-  },
-  {
-    label: "Now",
-    href: "#now",
-    body: "What I am learning and shipping in the current season."
-  },
-  {
-    label: "Contact",
-    href: "#resources",
-    body: "GitHub, LinkedIn, resume, and email endpoints."
-  }
-];
-
-const projects = [
-  {
+    number: "01",
     title: "Agent Notes",
-    body:
-      "An open-source tool idea for local notes and durable context that coding agents can use while helping with real projects.",
+    focus:
+      "Open-source local notes and durable context for coding agents.",
     tags: ["Astro", "TypeScript", "Local-first", "Agents"],
-    status: "Exploring"
+    status: "Exploring",
+    statusTone: "green"
   },
   {
+    number: "02",
     title: "Homelab / Infrastructure",
-    body:
-      "Practical infrastructure work around remote access, local services, backups, and the small systems that make a developer setup more reliable.",
+    focus:
+      "Remote access, local services, backups, and small reliable systems.",
     tags: ["Linux", "Networking", "Backups", "Remote access"],
-    status: "Learning"
+    status: "Learning",
+    statusTone: "amber"
   },
   {
+    number: "03",
     title: "AI Tooling Experiments",
-    body:
-      "Local AI workflows, automation experiments, and agent-oriented development patterns explored through hands-on builds.",
+    focus:
+      "Local AI workflows, automation tests, and agent-oriented tooling.",
     tags: ["OpenAI", "Local AI", "Automation", "CLI"],
-    status: "Building"
+    status: "Building",
+    statusTone: "green"
   }
 ];
 
-const nowItems = [
-  {
-    title: "Growing as a software engineer",
-    body: "Practicing fundamentals through real projects, review, and repetition."
-  },
-  {
-    title: "Building open-source developer tools",
-    body: "Starting small, keeping scope honest, and shipping useful pieces."
-  },
-  {
-    title: "Learning AI-assisted engineering workflows",
-    body: "Testing where agents help, where they fail, and how to keep context clear."
-  },
-  {
-    title: "Documenting practical lessons",
-    body: "Turning setup notes and debugging paths into reusable references."
-  }
+const notes = [
+  "Practicing fundamentals through review and repetition.",
+  "Keeping scope small enough to finish and improve.",
+  "Studying where AI-assisted engineering helps and where it gets messy."
 ];
 
-const codeLines = [
-  "const builder = {",
-  '  focus: ["practical software", "AI tools", "dev systems"],',
-  '  mindset: "ship small, iterate, improve",',
-  '  learning: "in public"',
-  "};",
-  "",
-  "while (learning) { build(); ship(); reflect(); }"
+const contactLinks = [
+  { label: "GitHub", href: "https://github.com/XtraSaltyDev" },
+  { label: "Email", href: "mailto:hello@memion.io" },
+  { label: "Resume", href: "/resume.pdf" }
 ];
 ---
 
@@ -132,165 +65,111 @@ const codeLines = [
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://memion.io" />
     <meta property="og:site_name" content="memion.io" />
-    <meta name="theme-color" content="#f7f9f7" />
+    <meta name="theme-color" content="#fbfcfb" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
+    <header class="site-header">
+      <div class="site-shell header-inner">
+        <a class="brand-lockup" href="/" aria-label="memion.io home">
+          <span class="brand-mark" aria-hidden="true">ME</span>
+          <span>memion.io</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          {
+            navLinks.map((link) => (
+              <a href={link.href}>{link.label}</a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
     <main id="main">
       <section class="site-shell hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <a class="brand-lockup" href="/" aria-label="memion.io home">
-            <span class="brand-mark" aria-hidden="true">ME</span>
-            <span>memion.io</span>
-          </a>
-          <h1 id="hero-title">Miller Emion</h1>
-          <p class="role">Junior Software Engineer</p>
-          <p class="statement">
-            Building practical software, AI tools, and developer systems.
-          </p>
-          <div class="icon-link-row" aria-label="Social and contact links">
-            {
-              socialLinks.map((link) => (
-                <a
-                  class:list={["icon-link", { placeholder: link.placeholder }]}
-                  href={link.href}
-                  aria-label={`${link.label}${link.placeholder ? " placeholder" : ""}`}
-                  title={link.label}
-                >
-                  <svg viewBox={link.viewBox} aria-hidden="true" focusable="false">
-                    <path d={link.path}></path>
-                  </svg>
-                  <span class="sr-only">{link.label}</span>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-
-        <div class="hero-art" aria-label="Builder profile code note">
-          <div class="terminal-card">
-            <div class="terminal-top">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <p>~/memion.io</p>
-            </div>
-            <pre aria-label="Short code-style summary">{codeLines.join("\n")}</pre>
-          </div>
-        </div>
+        <p class="eyebrow">Portfolio / 2026</p>
+        <h1 id="hero-title">Miller Emion</h1>
+        <p class="role">Junior Software Engineer</p>
+        <p class="statement">
+          Building practical software, AI tools, and developer systems.
+        </p>
       </section>
 
-      <section id="projects" class="site-shell section projects-section" aria-labelledby="projects-title">
+      <section id="work" class="site-shell section work-section" aria-labelledby="work-title">
         <div class="section-heading">
-          <h2 id="projects-title" class="section-label">Projects</h2>
-          <a class="section-action" href="https://github.com/XtraSaltyDev">View GitHub</a>
+          <h2 id="work-title" class="section-label">Work</h2>
         </div>
 
-        <div class="projects-grid">
+        <div class="work-table" aria-label="Selected work">
+          <div class="work-row work-head" aria-hidden="true">
+            <span>#</span>
+            <span>Project</span>
+            <span>Focus</span>
+            <span>Status</span>
+            <span>Tags</span>
+          </div>
+
           {
-            projects.map((project) => (
-              <article class="project-card">
-                <div class="project-card-main">
-                  <div class="project-icon" aria-hidden="true">~/</div>
-                  <div>
-                    <h3>{project.title}</h3>
-                    <p>{project.body}</p>
-                  </div>
-                </div>
-                <ul class="tag-list" aria-label={`${project.title} focus areas`}>
-                  {project.tags.map((tag) => <li>{tag}</li>)}
+            workItems.map((item) => (
+              <article class="work-row">
+                <p class="work-number">{item.number}</p>
+                <h3>{item.title}</h3>
+                <p class="work-focus">{item.focus}</p>
+                <p class="work-status">
+                  <span class:list={["status-dot", item.statusTone]} aria-hidden="true"></span>
+                  {item.status}
+                </p>
+                <ul class="tag-list" aria-label={`${item.title} focus tags`}>
+                  {item.tags.map((tag) => <li>{tag}</li>)}
                 </ul>
-                <div class="project-meta">
-                  <span>Status: {project.status}</span>
-                  <a href="https://github.com/XtraSaltyDev">GitHub</a>
-                </div>
               </article>
             ))
           }
         </div>
       </section>
 
-      <div class="site-shell lower-grid">
-        <section id="about" class="panel-section" aria-labelledby="about-title">
-          <h2 id="about-title" class="section-label">About</h2>
-          <div class="section-content">
+      <section id="notes" class="site-shell section notes-section" aria-labelledby="notes-title">
+        <div class="section-heading">
+          <h2 id="notes-title" class="section-label">Notes</h2>
+        </div>
+
+        <div class="notes-grid">
+          <div class="note-copy">
             <p>
-              I am an early-career software engineer focused on practical,
-              useful software. I learn fastest by building real things, testing
-              them honestly, and improving the pieces that make everyday
+              I am an early-career software engineer focused on useful,
+              practical software. I learn fastest by building real things,
+              testing them honestly, and improving the pieces that make everyday
               development smoother.
             </p>
-            <p>
-              My current interests sit around developer tools, local-first
-              workflows, infrastructure, and AI-assisted engineering. I am still
-              growing, but I care about writing clear code, shipping small
-              improvements, and understanding the systems I work with.
-            </p>
           </div>
-        </section>
+          <ul class="note-list">
+            {notes.map((note) => <li>{note}</li>)}
+          </ul>
+        </div>
+      </section>
 
-        <section id="now" class="panel-section" aria-labelledby="now-title">
-          <h2 id="now-title" class="section-label">Now</h2>
-          <div class="section-content">
-            <ul class="now-list">
-              {
-                nowItems.map((item) => (
-                  <li>
-                    <span aria-hidden="true"></span>
-                    <div>
-                      <strong>{item.title}</strong>
-                      <p>{item.body}</p>
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </section>
+      <section id="contact" class="site-shell section contact-section" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title" class="section-label">Contact</h2>
+          <p>Open to junior engineering roles and thoughtful collaboration.</p>
+        </div>
 
-        <section id="resources" class="panel-section" aria-labelledby="resources-title">
-          <h2 id="resources-title" class="section-label">Resources</h2>
-          <div class="section-content">
-            <p>
-              Start with the page section you need, then jump out to the public
-              endpoints as they come online.
-            </p>
-            <ul class="resource-list">
-              {
-                resourceLinks.map((resource) => (
-                  <li>
-                    <a href={resource.href}>
-                      <span>{resource.label}</span>
-                      <small>{resource.body}</small>
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-            <div class="resource-socials" aria-label="Social and contact endpoints">
-              {
-                socialLinks.map((link) => (
-                  <a href={link.href} class:list={{ placeholder: link.placeholder }}>
-                    <svg viewBox={link.viewBox} aria-hidden="true" focusable="false">
-                      <path d={link.path}></path>
-                    </svg>
-                    <span>{link.label}</span>
-                  </a>
-                ))
-              }
-            </div>
-          </div>
-        </section>
-      </div>
+        <div class="contact-links" aria-label="Contact links">
+          {
+            contactLinks.map((link) => (
+              <a href={link.href}>{link.label}</a>
+            ))
+          }
+        </div>
+      </section>
     </main>
 
     <footer class="site-shell site-footer">
-      <p>© {new Date().getFullYear()} Miller Emion</p>
+      <p>&copy; {new Date().getFullYear()} Miller Emion</p>
       <p>Built with Astro. Hosted on Vercel.</p>
-      <a href="#main">Back to top</a>
     </footer>
   </body>
 </html>

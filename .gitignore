@@ -4,3 +4,13 @@ dist/
 .vercel/
 .DS_Store
 npm-debug.log*
+design-qa.md
+output/
+resume/*DRAFT*
+resume/*previewcopy*
+resume/~$*
+resume/build_resume_docx.py
+resume/current-job-intake.md
+resume/quicklook*/
+resume/rendered*/
+resume/textutil/
