@@ -4,22 +4,25 @@ import "../styles/global.css";
 const pageTitle = "Miller Emion - Junior Software Engineer";
 const description =
   "Miller Emion is a junior software engineer building practical software, AI tools, developer systems, and open-source projects.";
+const canonicalUrl = "https://memion.io";
+const socialImage = `${canonicalUrl}/social-card.svg`;
 
 const navLinks = [
   { label: "Work", href: "#work" },
   { label: "Notes", href: "#notes" },
-  { label: "Contact", href: "#contact" }
+  { label: "Contact", href: "#contact" },
 ];
 
 const workItems = [
   {
     number: "01",
     title: "Agent Notes",
-    focus:
-      "Open-source local notes and durable context for coding agents.",
+    focus: "Open-source local notes and durable context for coding agents.",
     tags: ["Astro", "TypeScript", "Local-first", "Agents"],
     status: "Exploring",
-    statusTone: "green"
+    statusTone: "green",
+    href: "https://github.com/XtraSaltyDev/agent-notes",
+    linkLabel: "GitHub",
   },
   {
     number: "02",
@@ -28,29 +31,28 @@ const workItems = [
       "Remote access, local services, backups, and small reliable systems.",
     tags: ["Linux", "Networking", "Backups", "Remote access"],
     status: "Learning",
-    statusTone: "amber"
+    statusTone: "amber",
   },
   {
     number: "03",
     title: "AI Tooling Experiments",
-    focus:
-      "Local AI workflows, automation tests, and agent-oriented tooling.",
+    focus: "Local AI workflows, automation tests, and agent-oriented tooling.",
     tags: ["OpenAI", "Local AI", "Automation", "CLI"],
     status: "Building",
-    statusTone: "green"
-  }
+    statusTone: "green",
+  },
 ];
 
 const notes = [
   "Practicing fundamentals through review and repetition.",
   "Keeping scope small enough to finish and improve.",
-  "Studying where AI-assisted engineering helps and where it gets messy."
+  "Studying where AI-assisted engineering helps and where it gets messy.",
 ];
 
 const contactLinks = [
-  { label: "GitHub", href: "https://github.com/XtraSaltyDev" },
+  { label: "GitHub", href: "https://github.com/XtraSaltyDev", external: true },
   { label: "Email", href: "mailto:hello@memion.io" },
-  { label: "Resume", href: "/resume.pdf" }
+  { label: "Resume", href: "/resume.pdf" },
 ];
 ---
 
@@ -60,12 +62,31 @@ const contactLinks = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href="https://memion.io" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://memion.io" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="memion.io" />
-    <meta name="theme-color" content="#fbfcfb" />
+    <meta property="og:image" content={socialImage} />
+    <meta
+      property="og:image:alt"
+      content="memion.io social preview for Miller Emion"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta
+      name="theme-color"
+      content="#fbfcfb"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#101816"
+      media="(prefers-color-scheme: dark)"
+    />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>
   </head>
@@ -79,11 +100,7 @@ const contactLinks = [
           <span>memion.io</span>
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-          {
-            navLinks.map((link) => (
-              <a href={link.href}>{link.label}</a>
-            ))
-          }
+          {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
         </nav>
       </div>
     </header>
@@ -98,40 +115,77 @@ const contactLinks = [
         </p>
       </section>
 
-      <section id="work" class="site-shell section work-section" aria-labelledby="work-title">
+      <section
+        id="work"
+        class="site-shell section work-section"
+        aria-labelledby="work-title"
+      >
         <div class="section-heading">
           <h2 id="work-title" class="section-label">Work</h2>
         </div>
 
-        <div class="work-table" aria-label="Selected work">
-          <div class="work-row work-head" aria-hidden="true">
-            <span>#</span>
-            <span>Project</span>
-            <span>Focus</span>
-            <span>Status</span>
-            <span>Tags</span>
-          </div>
-
+        <ul class="work-list" aria-label="Selected work">
           {
             workItems.map((item) => (
-              <article class="work-row">
-                <p class="work-number">{item.number}</p>
-                <h3>{item.title}</h3>
-                <p class="work-focus">{item.focus}</p>
-                <p class="work-status">
-                  <span class:list={["status-dot", item.statusTone]} aria-hidden="true"></span>
-                  {item.status}
-                </p>
-                <ul class="tag-list" aria-label={`${item.title} focus tags`}>
-                  {item.tags.map((tag) => <li>{tag}</li>)}
-                </ul>
-              </article>
+              <li class="work-item">
+                <article class="work-card">
+                  <p class="work-number" aria-label={`Project ${item.number}`}>
+                    {item.number}
+                  </p>
+                  <div class="work-title-block">
+                    <span class="work-meta-label">Project</span>
+                    <h3>
+                      {item.href ? (
+                        <a
+                          class="work-title-link"
+                          href={item.href}
+                          rel="noreferrer"
+                        >
+                          <span>{item.title}</span>
+                          <span class="work-link-label">{item.linkLabel}</span>
+                        </a>
+                      ) : (
+                        item.title
+                      )}
+                    </h3>
+                  </div>
+                  <div class="work-focus-block">
+                    <span class="work-meta-label">Focus</span>
+                    <p class="work-focus">{item.focus}</p>
+                  </div>
+                  <div class="work-status-block">
+                    <span class="work-meta-label">Status</span>
+                    <p class="work-status">
+                      <span
+                        class:list={["status-dot", item.statusTone]}
+                        aria-hidden="true"
+                      />
+                      {item.status}
+                    </p>
+                  </div>
+                  <div class="work-tags-block">
+                    <span class="work-meta-label">Tags</span>
+                    <ul
+                      class="tag-list"
+                      aria-label={`${item.title} focus tags`}
+                    >
+                      {item.tags.map((tag) => (
+                        <li>{tag}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              </li>
             ))
           }
-        </div>
+        </ul>
       </section>
 
-      <section id="notes" class="site-shell section notes-section" aria-labelledby="notes-title">
+      <section
+        id="notes"
+        class="site-shell section notes-section"
+        aria-labelledby="notes-title"
+      >
         <div class="section-heading">
           <h2 id="notes-title" class="section-label">Notes</h2>
         </div>
@@ -151,7 +205,11 @@ const contactLinks = [
         </div>
       </section>
 
-      <section id="contact" class="site-shell section contact-section" aria-labelledby="contact-title">
+      <section
+        id="contact"
+        class="site-shell section contact-section"
+        aria-labelledby="contact-title"
+      >
         <div>
           <h2 id="contact-title" class="section-label">Contact</h2>
           <p>Open to junior engineering roles and thoughtful collaboration.</p>
@@ -160,7 +218,12 @@ const contactLinks = [
         <div class="contact-links" aria-label="Contact links">
           {
             contactLinks.map((link) => (
-              <a href={link.href}>{link.label}</a>
+              <a
+                href={link.href}
+                rel={link.external ? "noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
             ))
           }
         </div>

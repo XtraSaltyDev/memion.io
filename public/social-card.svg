@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">memion.io social preview</title>
+  <desc id="desc">Social preview card for Miller Emion, Junior Software Engineer.</desc>
+  <rect width="1200" height="630" fill="#fbfcfb"/>
+  <rect x="70" y="70" width="1060" height="490" rx="8" fill="#ffffff" stroke="#dce5e0" stroke-width="2"/>
+  <rect x="104" y="108" width="82" height="82" rx="8" fill="#142029"/>
+  <text x="145" y="158" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="26" font-weight="800" fill="#fbfcfb">ME</text>
+  <text x="104" y="252" font-family="Inter, Arial, sans-serif" font-size="88" font-weight="850" fill="#101923">Miller Emion</text>
+  <text x="104" y="319" font-family="SFMono-Regular, Consolas, monospace" font-size="32" font-weight="750" fill="#075c45">Junior Software Engineer</text>
+  <text x="104" y="403" font-family="SFMono-Regular, Consolas, monospace" font-size="28" fill="#425162">Building practical software, AI tools, and developer systems.</text>
+  <text x="104" y="503" font-family="SFMono-Regular, Consolas, monospace" font-size="26" font-weight="750" fill="#075c45">memion.io</text>
+  <line x1="104" y1="454" x2="1096" y2="454" stroke="#dce5e0" stroke-width="2"/>
+</svg>

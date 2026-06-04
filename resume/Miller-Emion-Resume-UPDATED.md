@@ -1,7 +1,7 @@
 # Miller Emion
 
 Junior Software Engineer / IT Support Specialist  
-Cibolo, TX 78108 | DevDadx64@outlook.com | (719) 666-0177  
+Cibolo, TX | hello@memion.io  
 https://github.com/XtraSaltyDev | https://memion.io
 
 ## Summary

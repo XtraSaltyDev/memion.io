@@ -9,6 +9,7 @@ output/
 resume/*DRAFT*
 resume/*previewcopy*
 resume/~$*
+resume/*.docx
 resume/build_resume_docx.py
 resume/current-job-intake.md
 resume/quicklook*/

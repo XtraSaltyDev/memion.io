@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --bg: #fbfcfb;
   --surface: #ffffff;
   --text: #101923;
@@ -10,13 +10,34 @@
   --accent: #087756;
   --accent-strong: #075c45;
   --amber: #c88409;
+  --header-bg: color-mix(in srgb, var(--bg) 92%, white);
+  --brand-mark-bg: #142029;
+  --brand-mark-text: var(--bg);
   --mono:
     "SFMono-Regular", Consolas, "Liberation Mono", Menlo, ui-monospace,
     monospace;
   --sans:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   --max-width: 980px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101816;
+    --surface: #18221f;
+    --text: #eef7f2;
+    --muted: #b8c8bf;
+    --quiet: #8d9b94;
+    --border: #293a34;
+    --border-strong: #41554c;
+    --accent: #35c489;
+    --accent-strong: #82e6b9;
+    --amber: #e4ad46;
+    --header-bg: #121c19;
+    --brand-mark-bg: #eef7f2;
+    --brand-mark-text: #101816;
+  }
 }
 
 * {
@@ -83,7 +104,7 @@ p {
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: color-mix(in srgb, var(--bg) 92%, white);
+  background: var(--header-bg);
 }
 
 .header-inner {
@@ -110,8 +131,8 @@ p {
   height: 2.45rem;
   place-items: center;
   border-radius: 7px;
-  background: #142029;
-  color: var(--bg);
+  background: var(--brand-mark-bg);
+  color: var(--brand-mark-text);
   font-family: var(--mono);
   font-size: 0.82rem;
   font-weight: 800;
@@ -147,7 +168,7 @@ p {
 
 .eyebrow,
 .section-label,
-.work-head,
+.work-meta-label,
 .work-number,
 .tag-list,
 .work-status {
@@ -206,24 +227,33 @@ p {
   text-transform: uppercase;
 }
 
-.work-table {
+.work-list {
   display: grid;
+  padding: 0;
+  margin: 0;
   border-top: 1px solid var(--border);
+  list-style: none;
 }
 
-.work-row {
-  display: grid;
-  grid-template-columns: 2.6rem minmax(8.8rem, 0.95fr) minmax(13rem, 1.55fr) minmax(7rem, 0.75fr) minmax(11.5rem, 1.1fr);
-  column-gap: clamp(1rem, 2.2vw, 2rem);
-  align-items: start;
-  padding: 2rem 0;
+.work-item {
   border-bottom: 1px solid var(--border);
 }
 
-.work-head {
-  padding: 0.95rem 0;
+.work-card {
+  display: grid;
+  grid-template-columns:
+    2.6rem minmax(8.8rem, 0.95fr) minmax(13rem, 1.55fr)
+    minmax(7rem, 0.75fr) minmax(11.5rem, 1.1fr);
+  column-gap: clamp(1rem, 2.2vw, 2rem);
+  align-items: start;
+  padding: 2rem 0;
+}
+
+.work-meta-label {
+  display: block;
+  margin-bottom: 0.45rem;
   color: var(--quiet);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -234,11 +264,35 @@ p {
   font-weight: 850;
 }
 
-.work-row h3 {
+.work-card h3 {
   margin: -0.14rem 0 0;
   color: var(--text);
   font-size: clamp(1.1rem, 2vw, 1.55rem);
   line-height: 1.28;
+}
+
+.work-title-link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.7rem;
+  align-items: baseline;
+  color: var(--text);
+  text-decoration-color: var(--border-strong);
+  text-decoration-thickness: 0.08em;
+}
+
+.work-title-link:hover {
+  color: var(--accent-strong);
+  text-decoration-color: currentColor;
+}
+
+.work-link-label {
+  color: var(--accent-strong);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .work-focus {
@@ -393,20 +447,16 @@ p {
     min-height: 5rem;
   }
 
-  .work-head {
-    display: none;
-  }
-
-  .work-row {
+  .work-card {
     grid-template-columns: 2.6rem minmax(0, 1fr);
     gap: 0.7rem 1rem;
     padding: 1.65rem 0;
   }
 
-  .work-row h3,
-  .work-focus,
-  .work-status,
-  .tag-list {
+  .work-title-block,
+  .work-focus-block,
+  .work-status-block,
+  .work-tags-block {
     grid-column: 2;
   }
 

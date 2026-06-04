@@ -112,7 +112,7 @@ def build():
     contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
     set_run(
         contact.add_run(
-            "Cibolo, TX 78108 | DevDadx64@outlook.com | (719) 666-0177 | github.com/XtraSaltyDev | memion.io"
+            "Cibolo, TX | hello@memion.io | github.com/XtraSaltyDev | memion.io"
         ),
         size=8.7,
         color="526173",

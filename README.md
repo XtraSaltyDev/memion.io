@@ -1,6 +1,8 @@
 # memion.io
 
-Personal website for Miller Emion. This is the v0.1 static homepage for `memion.io`, built to be simple, fast, and easy to deploy through Vercel.
+Personal website for Miller Emion. This is a small static portfolio for `memion.io`, built to be simple, fast, and easy to deploy through Vercel.
+
+The current homepage is organized around Work, Notes, and Contact.
 
 ## Tech Stack
 
@@ -21,6 +23,8 @@ The dev server usually runs at `http://localhost:4321`.
 ## Build
 
 ```bash
+npm run format:check
+npm test
 npm run build
 npm run check
 ```
@@ -38,31 +42,46 @@ Import this GitHub repository into Vercel and use the default Astro settings:
 
 ## Domain Notes
 
-The production domains will be:
+The production domains are:
 
 - `memion.io`
 - `www.memion.io`
 
-DNS is managed in Cloudflare. Add the domain names in Vercel first, then wait for Vercel to show the exact DNS records it expects. After Vercel provides those records, update Cloudflare with those exact values.
+DNS is managed in Cloudflare. Keep the Vercel domain settings and Cloudflare DNS records in sync, and avoid changing registrar or hosting settings when the remaining issue is local DNS cache.
 
 Do not configure GoDaddy hosting for this site. GoDaddy is only the registrar in this setup.
 
 ## v0.1 Checklist
 
 - [x] Single-page personal homepage
-- [x] About, Projects, Now, and Contact sections
-- [x] Placeholder links for LinkedIn, resume, and email
+- [x] Work, Notes, and Contact sections
+- [x] Public GitHub, email, and resume contact links
 - [x] Basic metadata and Open Graph tags
 - [x] Responsive layout
-- [x] Light and dark mode support through system preferences
-- [ ] Replace placeholder LinkedIn URL
-- [ ] Add a real resume file at `/public/resume.pdf`
-- [ ] Confirm the preferred public email address
-- [ ] Add real project links as projects become public
+- [x] Confirmed public email address: `hello@memion.io`
+
+## v0.2
+
+v0.2 tightens the portfolio without changing its intentionally small shape.
+
+- [x] Real PDF resume served from `/resume.pdf`
+- [x] README matches current IA
+- [x] CI runs formatting, tests, Astro check, and build
+- [x] Dark mode support is real through `prefers-color-scheme`
+- [x] Social metadata improved with a local SVG preview image
+- [x] Public project links added where real URLs exist
+
+The public resume source is in `resume/Miller-Emion-Resume-UPDATED.md`. Run the PDF generator after resume edits:
+
+```bash
+uv run --with-requirements resume/requirements.txt python resume/build_resume_pdf.py
+```
+
+The DOCX generator is kept for editable Word drafts, but generated DOCX files are ignored. The public portfolio artifact is `public/resume.pdf`.
 
 ## Future Improvements
 
 - Add a small writing or notes section
 - Add project detail pages when projects have public repositories or demos
-- Add a real social preview image
+- Generate a PNG social preview image for platforms that prefer PNG over SVG
 - Tighten copy after the first production deploy
