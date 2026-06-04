@@ -12,7 +12,8 @@
   --amber: #c88409;
   --header-bg: color-mix(in srgb, var(--bg) 92%, white);
   --brand-mark-bg: #142029;
-  --brand-mark-text: var(--bg);
+  --brand-mark-text: #fbfcfb;
+  --brand-mark-dot: #7cc7b2;
   --mono:
     "SFMono-Regular", Consolas, "Liberation Mono", Menlo, ui-monospace,
     monospace;
@@ -35,8 +36,6 @@
     --accent-strong: #82e6b9;
     --amber: #e4ad46;
     --header-bg: #121c19;
-    --brand-mark-bg: #eef7f2;
-    --brand-mark-text: #101816;
   }
 }
 
@@ -126,6 +125,7 @@ p {
 }
 
 .brand-mark {
+  position: relative;
   display: grid;
   width: 2.45rem;
   height: 2.45rem;
@@ -137,6 +137,17 @@ p {
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.brand-mark::after {
+  position: absolute;
+  top: 0.46rem;
+  right: 0.46rem;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: var(--brand-mark-dot);
+  content: "";
 }
 
 .site-nav {

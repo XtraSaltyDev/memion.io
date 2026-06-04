@@ -2,12 +2,17 @@
   <title id="title">memion.io social preview</title>
   <desc id="desc">Social preview card for Miller Emion, Junior Software Engineer.</desc>
   <rect width="1200" height="630" fill="#fbfcfb"/>
-  <rect x="70" y="70" width="1060" height="490" rx="8" fill="#ffffff" stroke="#dce5e0" stroke-width="2"/>
-  <rect x="104" y="108" width="82" height="82" rx="8" fill="#142029"/>
-  <text x="145" y="158" text-anchor="middle" font-family="SFMono-Regular, Consolas, monospace" font-size="26" font-weight="800" fill="#fbfcfb">ME</text>
-  <text x="104" y="252" font-family="Inter, Arial, sans-serif" font-size="88" font-weight="850" fill="#101923">Miller Emion</text>
-  <text x="104" y="319" font-family="SFMono-Regular, Consolas, monospace" font-size="32" font-weight="750" fill="#075c45">Junior Software Engineer</text>
-  <text x="104" y="403" font-family="SFMono-Regular, Consolas, monospace" font-size="28" fill="#425162">Building practical software, AI tools, and developer systems.</text>
-  <text x="104" y="503" font-family="SFMono-Regular, Consolas, monospace" font-size="26" font-weight="750" fill="#075c45">memion.io</text>
-  <line x1="104" y1="454" x2="1096" y2="454" stroke="#dce5e0" stroke-width="2"/>
+  <rect x="0" y="0" width="14" height="630" fill="#087756"/>
+  <g id="brand-lockup" transform="translate(96 74)">
+    <g id="monogram">
+      <rect width="64" height="64" rx="14" fill="#142029"/>
+      <path d="M16 45V19h7l9 15 9-15h7v26h-6V28.7L34.1 42h-4.2L22 28.7V45h-6Z" fill="#FBFCFB"/>
+      <circle cx="50" cy="14" r="4" fill="#7CC7B2"/>
+    </g>
+    <text x="84" y="42" font-family="SFMono-Regular, Consolas, monospace" font-size="26" font-weight="750" fill="#075c45">memion.io</text>
+  </g>
+  <text x="96" y="292" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="850" fill="#101923">Miller Emion</text>
+  <text x="100" y="362" font-family="SFMono-Regular, Consolas, monospace" font-size="32" font-weight="750" fill="#075c45">Junior Software Engineer</text>
+  <text x="100" y="458" font-family="SFMono-Regular, Consolas, monospace" font-size="29" fill="#425162">Building practical software, AI tools, and developer systems.</text>
+  <line x1="100" y1="524" x2="454" y2="524" stroke="#087756" stroke-width="6" stroke-linecap="round"/>
 </svg>
