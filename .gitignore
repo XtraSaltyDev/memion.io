@@ -1,4 +1,5 @@
 node_modules/
+MEMORY.md
 .venv/
 dist/
 .astro/

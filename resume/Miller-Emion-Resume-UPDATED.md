@@ -2,7 +2,7 @@
 
 Junior Software Engineer / IT Support Specialist  
 Cibolo, TX | hello@memion.io  
-https://github.com/XtraSaltyDev | https://memion.io
+https://github.com/XtraSaltyDev | https://www.memion.io
 
 ## Summary
 

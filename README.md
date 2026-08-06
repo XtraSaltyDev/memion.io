@@ -42,12 +42,12 @@ Import this GitHub repository into Vercel and use the default Astro settings:
 
 ## Domain Notes
 
-The production domains are:
+The public domains are:
 
-- `memion.io`
-- `www.memion.io`
+- Primary production URL: `https://www.memion.io`
+- Apex redirect: `https://memion.io` -> `https://www.memion.io/`
 
-DNS is managed in Cloudflare. Keep the Vercel domain settings and Cloudflare DNS records in sync, and avoid changing registrar or hosting settings when the remaining issue is local DNS cache.
+DNS is managed in Cloudflare. Keep the Vercel domain settings and Cloudflare DNS records in sync, and avoid changing registrar or hosting settings when the remaining issue is local DNS cache. Keep Astro metadata aligned with the final `www` URL so the canonical and social preview URLs do not point at a redirect hop.
 
 Do not configure GoDaddy hosting for this site. GoDaddy is only the registrar in this setup.
 
