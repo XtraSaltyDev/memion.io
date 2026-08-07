@@ -4,8 +4,9 @@ import "../styles/global.css";
 const pageTitle = "Miller Emion - Junior Software Engineer";
 const description =
   "Miller Emion is a junior software engineer building practical software, AI tools, developer systems, and open-source projects.";
-const canonicalUrl = "https://memion.io";
+const canonicalUrl = "https://www.memion.io";
 const socialImage = `${canonicalUrl}/social-card.png`;
+const socialImageAlt = "memion.io social preview for Miller Emion";
 
 const navLinks = [
   { label: "Work", href: "#work" },
@@ -13,7 +14,18 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const workItems = [
+type WorkItem = {
+  number: string;
+  title: string;
+  focus: string;
+  tags: string[];
+  status: string;
+  statusTone: "green" | "amber";
+  href?: string;
+  linkLabel?: string;
+};
+
+const workItems: WorkItem[] = [
   {
     number: "01",
     title: "Agent Notes",
@@ -21,16 +33,14 @@ const workItems = [
     tags: ["Astro", "TypeScript", "Local-first", "Agents"],
     status: "Exploring",
     statusTone: "green",
-    href: "https://github.com/XtraSaltyDev/agent-notes",
-    linkLabel: "GitHub",
   },
   {
     number: "02",
-    title: "Homelab / Infrastructure",
+    title: "Project Atlas",
     focus:
-      "Remote access, local services, backups, and small reliable systems.",
-    tags: ["Linux", "Networking", "Backups", "Remote access"],
-    status: "Learning",
+      "Local-first macOS menu bar app for scanning repos, classifying git state, and offering guarded sync actions.",
+    tags: ["SwiftUI", "SwiftPM", "macOS", "GitHub CLI"],
+    status: "Alpha",
     statusTone: "amber",
   },
   {
@@ -62,21 +72,22 @@ const contactLinks = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="canonical" href="https://memion.io" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="memion.io" />
     <meta property="og:image" content={socialImage} />
-    <meta
-      property="og:image:alt"
-      content="memion.io social preview for Miller Emion"
-    />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <meta
       name="theme-color"
       content="#fbfcfb"
